@@ -18,7 +18,7 @@
 # About The Project
 
 **Assignment Overview**  
-This project has being developed as part of a Higher Diploma in Computer Science final project. It is a browser-based cybersecurity gamified revision to that challenges users to complete interactive tasks.
+This project has being developed as part of a Higher Diploma in Computer Science final project. It is a browser-based cybersecurity gamified revision tool that challenges users to complete interactive tasks.
 
 ### Core Features (Backend):
 - User authentication with JWT (Sign Up, Login)
