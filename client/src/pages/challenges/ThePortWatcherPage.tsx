@@ -37,25 +37,25 @@ const PortWatcher = () => {
       } 
         // step-based guidance through scan
         if (step === 1 && inputCommand === "ipconfig") {
-          terminalOutput = storedCommands[inputCommand] || terminalOutput;
+          terminalOutput = storedCommands[inputCommand];
           nextGuide = `Well done! The IPv4 address and Subnet Mask found below, determines that the network range is 192.168.10.0/24. 
           Use this range to PING ALL DEVICES on the network and discover active hosts.`;
           setHint("");
           setStep(2);
         } else if (step === 2 && inputCommand === "nmap -sn 192.168.10.0/24") {
-          terminalOutput = storedCommands[inputCommand] || terminalOutput;
+          terminalOutput = storedCommands[inputCommand];
           nextGuide = `Great! You've found 7 active hosts (see below). Now scan for common open ports like HTTP (80) and 
           HTTPS (443) using -p 80,443 to find potentially vulnerable services.`;
           setHint("");
           setStep(3);
         } else if (step === 3 && inputCommand === "nmap -p 80,443 192.168.10.0/24") {
-          terminalOutput = storedCommands[inputCommand] || terminalOutput;
+          terminalOutput = storedCommands[inputCommand];
           nextGuide = `Nice work! Ports 80 & 443 on gateway.local (192.168.10.1) are open. 
           Run a SERVICE DETECTION SCAN on this device to identify the software — it may reveal exploitable vulnerabilities!`;
           setHint("");
           setStep(4);
         } else if (step === 4 && inputCommand === "nmap -sV -p 80,443 192.168.10.1" ) {
-          terminalOutput = storedCommands[inputCommand] || terminalOutput;
+          terminalOutput = storedCommands[inputCommand];
           nextGuide = `Congratulations! You've identified that the router is running Apache httpd 2.4.49. 
           This version is outdated and has known vulnerabilities, making it a potential security risk.`;
           setStep(5);

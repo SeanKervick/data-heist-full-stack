@@ -36,12 +36,12 @@ const CertInspectorChallenge = () => {
       certificate === "Sun, 18 May 2025 17:02:06 UTC" || // SSL Labs
       certificate === "Sun, 18 May 2025" // SSL Labs
     ) {
-      setSuccess(true);
+      setSuccess(true); // end of challenge
       setTimerStart(false); // stop the timer
 
-
-      setChallengeScore(time - hintUsed); // update state for end of challenge dialog box UI
-      const updatedTotal = totalScore + time; // calculate total score
+      const challengeScore = time - hintUsed;
+      setChallengeScore(challengeScore); // update state for end of challenge dialog box UI
+      const updatedTotal = totalScore + (challengeScore); // calculate total score
       localStorage.setItem("totalScore", (updatedTotal).toString()); // store updated total score
 
       setShowDialog(true); // show dialog at end of this challenge

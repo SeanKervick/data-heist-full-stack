@@ -14,7 +14,7 @@ const Timer: React.FC<TimerProps> = ({ initialTime, start, onTimeUp, onTimeUpdat
     if (time > 0) {
       setTimeout(() => {  // "asynchronous function" - https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
         setTime(time - 1);
-        onTimeUpdate(time - 1);
+        onTimeUpdate(time - 1); // for tracking points
       }, 1000);
     } else {
       onTimeUp(); // call function when timer reaches 0
